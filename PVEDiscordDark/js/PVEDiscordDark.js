@@ -5,6 +5,7 @@ const COLOR_DARKER = '#101010'
 const COLOR_PRIMARY = '#8C977D'
 const COLOR_YELLOW = '#D9BC8C'
 const COLOR_RED = '#B66467'
+const COLOR_WHITE = '#E8E3E3'
 
 
 const swapLogo = async function() {
@@ -30,11 +31,11 @@ const swapLogo = async function() {
 
 const patchCharts = function() {
 	Ext.chart.theme.Base.prototype.config.chart.defaults.background = COLOR_DARKER;
-	Ext.chart.theme.Base.prototype.config.axis.defaults.label.color = 'white';
-	Ext.chart.theme.Base.prototype.config.axis.defaults.title.color = 'white';
+	Ext.chart.theme.Base.prototype.config.axis.defaults.label.color = COLOR_WHITE;
+	Ext.chart.theme.Base.prototype.config.axis.defaults.title.color = COLOR_WHITE;
 	Ext.chart.theme.Base.prototype.config.axis.defaults.style.strokeStyle = COLOR_PRIMARY;
 	Ext.chart.theme.Base.prototype.config.axis.defaults.grid.strokeStyle = 'rgba(21, 21, 21, 1)'; // COLOR_DARK
-	Ext.chart.theme.Base.prototype.config.sprites.text.color = 'white';
+	Ext.chart.theme.Base.prototype.config.sprites.text.color = COLOR_WHITE;
 };
 
 function patchGaugeWidget() {
@@ -62,7 +63,7 @@ function patchCreateWidget() {
 	_createWidget = Ext.createWidget
 	Ext.createWidget = function(c, p) {
 		if (typeof p === 'object' && typeof p.style === 'object') {
-			if (c === 'component' && typeof p.style['background-color'] === 'string' && p.style['background-color'] === 'white') p.style['background-color'] = COLOR_DARK
+			if (c === 'component' && typeof p.style['background-color'] === 'string' && p.style['background-color'] === COLOR_WHITE) p.style['background-color'] = COLOR_DARK
 		}
 		return _createWidget(c, p)
 	}
