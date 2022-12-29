@@ -1,5 +1,5 @@
 #!/bin/bash
-# https://github.com/Weilbyte/PVEDiscordDark
+# Based on Weilbyte's PVEDiscordDark
 
 umask 022
 
@@ -18,7 +18,7 @@ SCRIPTPATH="${SCRIPTDIR}$(basename "${BASH_SOURCE[0]}")"
 
 OFFLINEDIR="${SCRIPTDIR}offline"
 
-REPO=${REPO:-"Weilbyte/PVEDiscordDark"}
+REPO=${REPO:-"Fluffy-Bean/ProxmoxDark"}
 DEFAULT_TAG="master"
 TAG=${TAG:-$DEFAULT_TAG}
 BASE_URL="https://raw.githubusercontent.com/$REPO/$TAG"
@@ -87,7 +87,7 @@ function checkSupported {
         local SUPPORTEDARR=($(echo "$SUPPORTED" | tr ',' '\n'))
         if ! (printf '%s\n' "${SUPPORTEDARR[@]}" | grep -q -P "$PVEVersionMajor"); then
             echo -e "${WARN}You might encounter issues because your version ($PVEVersionMajor) is not matching currently supported versions ($SUPPORTED)."
-            echo -e "If you do run into any issues on >newer< versions, please consider opening an issue at https://github.com/Weilbyte/PVEDiscordDark/issues.${REG}"
+            echo -e "If you do run into any issues on >newer< versions, please consider opening an issue at https://github.com/Fluffy-Bean/ProxmoxDark/issues.${REG}"
         fi
     fi
 }
@@ -121,7 +121,7 @@ function usage {
         echo -e "  0                    OK"
         echo -e "  1                    Failure"
         echo -e "  2                    Already installed, OR not installed (when using install/uninstall commands)\n"
-        echo -e "Report issues at: <https://github.com/Weilbyte/PVEDiscordDark/issues>"
+        echo -e "Report issues at: <https://github.com/Fluffy-Bean/ProxmoxDark/issues>"
     fi
 }
 

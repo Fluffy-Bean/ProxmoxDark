@@ -1,8 +1,10 @@
-const COLOR_DARK = '#2C2F33'
-const COLOR_DARKER = '#23272a'
-const COLOR_BLURPLE = '#526DD1'
-const COLOR_YELLOW = '#faa61a'
-const COLOR_RED = '#ba2b2d'
+const COLOR_BLURPLE = '#526DD1' // Kept incase missed any variable references
+
+const COLOR_DARK = '#151515'
+const COLOR_DARKER = '#101010'
+const COLOR_PRIMARY = '#8C977D'
+const COLOR_YELLOW = '#D9BC8C'
+const COLOR_RED = '#B66467'
 
 
 const swapLogo = async function() {
@@ -30,8 +32,8 @@ const patchCharts = function() {
 	Ext.chart.theme.Base.prototype.config.chart.defaults.background = COLOR_DARKER;
 	Ext.chart.theme.Base.prototype.config.axis.defaults.label.color = 'white';
 	Ext.chart.theme.Base.prototype.config.axis.defaults.title.color = 'white';
-	Ext.chart.theme.Base.prototype.config.axis.defaults.style.strokeStyle = COLOR_BLURPLE;
-	Ext.chart.theme.Base.prototype.config.axis.defaults.grid.strokeStyle = 'rgba(44, 47, 51, 1)'; // COLOR_DARK
+	Ext.chart.theme.Base.prototype.config.axis.defaults.style.strokeStyle = COLOR_PRIMARY;
+	Ext.chart.theme.Base.prototype.config.axis.defaults.grid.strokeStyle = 'rgba(21, 21, 21, 1)'; // COLOR_DARK
 	Ext.chart.theme.Base.prototype.config.sprites.text.color = 'white';
 };
 
@@ -39,7 +41,7 @@ function patchGaugeWidget() {
 	Proxmox.panel.GaugeWidget.prototype.backgroundColor = COLOR_DARK;
 	Proxmox.panel.GaugeWidget.prototype.criticalColor = COLOR_RED;
 	Proxmox.panel.GaugeWidget.prototype.warningColor = COLOR_YELLOW;
-	Proxmox.panel.GaugeWidget.prototype.defaultColor = COLOR_BLURPLE;
+	Proxmox.panel.GaugeWidget.prototype.defaultColor = COLOR_PRIMARY;
 	Proxmox.panel.GaugeWidget.prototype.items[1].series[0].colors[0] = COLOR_DARK;
 };
 
@@ -73,4 +75,4 @@ patchBackupConfig();
 patchDiskSmartWindow();
 patchTFAEdit();
 patchCreateWidget();
-console.log('PVEDiscordDark :: Patched');
+console.log('ProxmoxDark :: Patched');
