@@ -1,6 +1,7 @@
 # Script to assist with PVEDiscordDark development
 #
-# By default serves HTTP on port 3000, any *.js request gets the JS script, any *.css request gets the CSS file and any image request gets corresponding image
+# By default serves HTTP on port 3000, any *.js request gets the JS script,
+# any *.css request gets the CSS file and any image request gets corresponding image
 # Meant to be used with the "Requestly" browser extension to redirect PVEDD requests from PVE server to localhost:3000
 #
 

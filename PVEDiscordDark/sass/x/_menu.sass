@@ -1,10 +1,16 @@
 .x-menu-item-focus
-	background-color: #677bc4
+	background-color: $primary
 
 .x-menu-item
-	background: $primary
+	background: $dark
 	border-style: none
 	border-width: 0
+	&:hover
+		background: $primarydark
+		color: #fff
+	&.x-menu-item-active
+		background: $primarydark
+		color: #fff
 
 .x-menu-default
 	background: $primary

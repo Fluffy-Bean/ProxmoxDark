@@ -1,18 +1,26 @@
 .x-btn
-	background: $primary
-	border-width: 0
+	background: $primarydark
+	border-width: 1px
+	border-color: $primary
 	&.x-unselectable.x-box-item
 		&.x-toolbar-item.x-btn-default-toolbar-small
 			&.x-btn-over, &.x-btn-menu-active
-				background-color: $primarydark
+				background-color: $primary
+				border-color: $primarydark
 		&.x-btn-default-small.x-btn-over
-			background-color: $primarydark
+			background-color: $primary
+			border-color: $primarydark
 	&.x-btn-menu-active.x-btn-default-toolbar-small, &.x-btn.x-btn-pressed.x-btn-default-toolbar-small
-		background-color: $primarydark
+		background-color: $primary
+		border-color: $primarydark
 
 .x-btn-over
+	background-color: $primary !important
+	border-color: $primarydark !important
+
 	&.x-btn-default-toolbar-small
-		background-color: $primarydark
+		background-color: $primary
+		border-color: $primarydark
 
 .x-keyboard-mode .x-btn-focus, .x-btn-focus
 	&.x-btn-default-toolbar-small
